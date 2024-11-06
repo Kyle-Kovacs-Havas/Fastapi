@@ -1,12 +1,13 @@
 name: Build and Deploy Code
 
-on:  [push, pull_request]
+on: [push, pull_request]
 
 jobs:
-    job1:
-        runs-on: ubuntu-latest #this is about production push request
-        steps:
-            - name: #describing what is happening
-            uses: actions/checkut@v2
-            - name: say hi
-            run: echo "hello" 
+  job1:
+    runs-on: ubuntu-latest  # this is about production push request
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2  # fixed the spelling and indentation
+
+      - name: Say hi
+        run: echo "hello"
